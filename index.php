@@ -1,6 +1,6 @@
 <?php
 
-require_once ("config.php");;
+require_once ("config.php");
 
 $SQL = new SQL;
 $usuarios = $SQL->select("SELECT * FROM tb_usuarios");
