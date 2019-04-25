@@ -3,7 +3,6 @@
 require_once ("config.php");
 
 //Carrega um único usuário:
-//
 //$user = new Usuario();
 //$user->loadById(9);
 //echo $user;
@@ -17,8 +16,15 @@ require_once ("config.php");
 //var_dump($busca);
 
 //Carrega um usuário usando o login e a senha:
-$usuario = new Usuario();
-$usuario->login("Joao", "1234590");
-echo $usuario;
+//$usuario = new Usuario();
+//$usuario->login("Joao", "1234590");
+//echo $usuario;
+
+$aluno = new Usuario();
+$aluno->setLogin("aluno1");
+$aluno->setSenha("@lun0");
+$aluno->insert();
+
+echo $aluno;
 ?>
 
