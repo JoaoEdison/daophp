@@ -112,6 +112,20 @@ class Usuario {
         }
         
     }
+    
+    public function update($login, $password){
+        
+        $this->setLogin($login);
+        $this->setSenha($password);
+                
+        $sql = new SQL;
+        $sql->query("UPDATE tb_usuarios SET deslogin = :LOGIN, dessenha = :SENHA WHERE idusuario = :ID", array(
+            ":LOGIN"=>$this->getLogin(),
+            ":SENHA"=>$this->getSenha(),
+            ":ID"=>$this->getIdusuario()           
+        ));
+        
+    }
 
     public function __toString() {
         return json_encode(array(
